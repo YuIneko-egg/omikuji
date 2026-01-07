@@ -1,0 +1,146 @@
+/* 基本リセット */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+/* 背景 */
+body {
+  background: url("動画/背景.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #e6e6e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ノイズ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("img/noise.png");
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+/* 全体ラッパー */
+.app {
+  width: 100%;
+  max-width: 420px;
+  padding: 24px 16px 32px;
+  text-align: center;
+}
+
+/* タイトル */
+.title {
+  font-size: 1.4rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+/* 枠 */
+.stage-frame {
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.03),
+    0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* 動画枠 */
+.stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: transparent; /* 黒を消す */
+}
+
+/* 動画 */
+#omikujiVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ボタン共通 */
+.btn {
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e6e6e6;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 10px 20px;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  transition: background 0.2s, opacity 0.2s;
+}
+.btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* 引くボタン（動画上） */
+.btn.draw {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 結果画像 */
+.result {
+  position: absolute;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.65);
+}
+#resultImg {
+ width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* もう一度引く（動画下） */
+.btn.retry {
+  display: none;
+  margin-top: 20px;
+}
+
+/* 下の文字 */
+.info-text {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #e6e6e6;
+  opacity: 0.7;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+/* PC対応 */
+@media (min-width: 768px) {
+  .app {
+    width: 40%;
+    max-width: 800px;
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 0%,
+      transparent 40%,
+      rgba(0,0,0,0.6) 100%
+    );
+    pointer-events: none;
+  }
+}
