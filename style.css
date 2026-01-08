@@ -6,7 +6,7 @@
 }
 html, body {
   height: 100%;
-  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-family: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
 }
 
 /* 背景 */
@@ -43,6 +43,8 @@ body::before {
   letter-spacing: 0.3em;
   margin-bottom: 16px;
   opacity: 0.7;
+    font-weight: 600;
+  letter-spacing: 0.35em;
 }
 
 /* 枠 */
