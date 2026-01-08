@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>おみくじ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- タイトル -->
+  <h1 class="title">怪談みくじ</h1>
+
+  <!-- 枠 -->
+  <div class="stage-frame">
+    <div class="stage">
+<video
+  id="omikujiVideo"
+  src="動画/おみくじ.mp4"   <!-- 初期動画/サムネイル用短い動画でもOK -->
+  muted
+  playsinline
+  poster="img/omikuji_thumbnail.png"
+></video>
+
+      <!-- 引くボタン -->
+      <button id="drawBtn" class="btn draw">おみくじを引く</button>
+
+      <!-- 結果画像 -->
+      <div id="result" class="result">
+        <img id="resultImg" alt="おみくじ結果">
+      </div>
+    </div>
+  </div>
+
+  <!-- 下のボタン -->
+  <button id="retryBtn" class="btn retry">もう一度引く</button>
+
+  <!-- ボタン下の文字 -->
+  <div class="info-text">スクショOK 結果は全７種</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
